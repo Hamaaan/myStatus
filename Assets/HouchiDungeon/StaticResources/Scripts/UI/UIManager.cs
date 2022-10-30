@@ -14,11 +14,6 @@ namespace naichilab
         //public Text PlayerName;
         public RadarChartPolygonUGUI RadarPolygon;
 
-        public float RatioHP;
-        public float RatioSpeed;
-        public float RatioRange;
-        public float RatioDefence;
-        public float RatioPower;
 
 
         // Start is called before the first frame update
@@ -32,11 +27,7 @@ namespace naichilab
             RadarPolygon.Volumes[3] = _svm.PlayerDefence/_svm.MaxPlayerDefence;
             RadarPolygon.Volumes[4] = _svm.PlayerPower/_svm.MaxPlayerPower;
 
-            RatioHP = _svm.PlayerHP / _svm.MaxPlayerHP;
-            RatioSpeed = _svm.PlayerSpeed / _svm.MaxPlayerSpeed;
-            RatioRange = _svm.PlayerRange / _svm.MaxPlayerRange;
-            RatioDefence = _svm.PlayerDefence / _svm.MaxPlayerDefence;
-            RatioPower = _svm.PlayerPower / _svm.MaxPlayerPower;
+          
         }
 
         // Update is called once per frame
@@ -45,5 +36,7 @@ namespace naichilab
             LevelText.text = _svm.PlayerLevel.ToString();
             ExpText.text = _svm.PlayerExp.ToString();
         }
+
+
     }
 }
