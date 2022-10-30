@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/song/testcoin.unity
+    guid: 9f02d5d7859d7491ebe466f6fc0b5fd0
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/TITLE.unity
+    guid: d5ff84e3fdaa3e24ea733bb4f94f84b2
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/MainVIEWER.unity
+    guid: fbf07add4e281204b87cf06dc6413051
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/RESULT.unity
+    guid: e6d4fed0e032de342902796318073fd6
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/STATUS.unity
+    guid: caaca5bf39bc3c64a9bcaf2a3b4c53f0
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/minigames/IQ_KigouSagashi.unity
+    guid: 3b73f75adec2df048896f96945ebfc4c
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/minigames/IQ_NumberChant.unity
+    guid: 5c1ab8d08f03f344fad3d20debbb19b6
+  - enabled: 0
+    path: Assets/Nakamura/Scenes/FinishScene.unity
+    guid: 0d002d6307b35471ba05d73976bbe807
+  - enabled: 0
+    path: Assets/Nakamura/Scenes/IQ_NumberChant 1.unity
+    guid: 51e78097c20b241249cfeccfa84c4aae
+  - enabled: 1
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Start.unity
+    guid: e4aee9184d4a5f94f89437bb355867d2
+  - enabled: 1
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Home.unity
+    guid: 9e60314d9483c724493a196035f3af58
+  - enabled: 1
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Dungeon001.unity
+    guid: fad55e7f82faa234b8e561567433cecc
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Home.unity
+    guid: 20f37c60ef072ff40a099ba0ac209b4b
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Dungeon001.unity
+    guid: 99691cae0d8e4024f9c86e4dd5429904
+  m_configObjects: {}
