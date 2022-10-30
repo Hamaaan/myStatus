@@ -7,13 +7,15 @@ public class PuzzleCollider : MonoBehaviour
 
     [SerializeField]
     private GameObject CorrectPiece;
-    public int ClearNumber;
     private bool Correct;
+    //public int ClearNumbers;
+    public Clear ClearA;
 
     void Start()
     {
+        ClearA = ClearA.GetComponent<Clear>();
         Correct = false;
-        GetTag();
+
     }
 
     public void GetTag()
@@ -23,27 +25,29 @@ public class PuzzleCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("触れた");
+        //Debug.Log("触れた");
         
-        if(other.CompareTag(CorrectPiece.tag)){
+        if(other.CompareTag(CorrectPiece.tag))
+        {
+             Debug.Log(CorrectPiece.tag);
 
-        Correct = true;
-        ClearNumber =ClearNumber+1;
-        Debug.Log(ClearNumber);
+        Correct = true;  //Debug.Log("あたり");
+        ClearA.ClearNumbers = ClearA.ClearNumbers+1;
+        Debug.Log(ClearA.ClearNumbers);
         
-
     }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("抜けた");
+        //Debug.Log("抜けた");
         
         if(other.CompareTag(CorrectPiece.tag)){
       
         Correct = false;
-        ClearNumber = ClearNumber-1;
-        Debug.Log(ClearNumber);
+        ClearA.ClearNumbers = ClearA.ClearNumbers-1;
+        Debug.Log(ClearA.ClearNumbers);
+
         
     }
     }

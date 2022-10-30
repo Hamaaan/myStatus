@@ -1,18 +1,46 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Clear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+       public int ClearNumbers;
+        [SerializeField]
+         Text clearText;
+         bool trigger = false ;
 
-    // Update is called once per frame
-    void Update()
+
+         void Start()
+       {
+       clearText.enabled = false;
+              }
+
+
+
+       void Update()
+       {
+            if(trigger == false)
+            {
+                CheckClear();
+            }
+
+       }
+
+        void CheckClear()
     {
+        //if (ClearNumbers <16)
+        //{
+            //return;
+        //}
         
+ 
+        if (ClearNumbers == 16)
+            { 
+            clearText.enabled = true;
+            Debug.Log("CLEAR!!って出したいけどなんかテキストが出ない");
+            trigger = true;
+            }
     }
 }
+

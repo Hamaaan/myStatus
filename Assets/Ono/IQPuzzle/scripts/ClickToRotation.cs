@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,7 +16,6 @@ public class ClickToRotation : MonoBehaviour
         Vector3 tmp = this.gameObject.transform.position;
         Instantiate(NextRotation, new Vector3(tmp.x, tmp.y, tmp.z), Quaternion.identity,parent);
         Destroy( this.gameObject );
-        Debug.Log("タッチされたにゃー");
 
     }
 }

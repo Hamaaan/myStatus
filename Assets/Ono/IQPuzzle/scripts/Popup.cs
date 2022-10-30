@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +18,7 @@ public class Popup : MonoBehaviour
     private GameObject createPrefab4;
     [SerializeField]
     [Tooltip("PieceSet")]
-    public GameObject PieceSet;
+    private GameObject PieceSet;
 
     // Start is called before the first frame update
     void Start()
