@@ -390,11 +390,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 614693243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc8dbb608790fd4797c594b24baa594, type: 3}
+  m_Script: {fileID: 11500000, guid: 3695c0859f2305948a9c62dd8c4966b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Home
-  isAdditive: 0
+  IntroScene: Intro
+  HomeScene: Home
 --- !u!1 &1168899169
 GameObject:
   m_ObjectHideFlags: 0
