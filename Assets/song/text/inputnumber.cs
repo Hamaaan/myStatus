@@ -115,6 +115,19 @@ public class inputnumber : MonoBehaviour
 
     public AudioSource correctsound;
     public AudioSource uncorrectsound;
+    public AudioSource pushsound;
+
+
+    public Text timer;
+    public float timerscore;
+
+    public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
+
+    [SerializeField] private Text Numtext;
+    public string[] InputNumbers = new string[4];
+    public int countset;
+
+    public NumberChant TimeUp;
 
 
     // Start is called before the first frame update
@@ -129,8 +142,31 @@ public class inputnumber : MonoBehaviour
         inputthirdtwo = new int[2];
         inputforth = new int[5];
 
-        
-        
+        count = 0;
+        //button.onClick.AddListener(OnClick);
+        btn1.onClick.AddListener(() => OnClick(1));
+        btn2.onClick.AddListener(() => OnClick(2));
+        btn3.onClick.AddListener(() => OnClick(3));
+        btn4.onClick.AddListener(() => OnClick(4));
+        btn5.onClick.AddListener(() => OnClick(5));
+        btn6.onClick.AddListener(() => OnClick(6));
+        btn7.onClick.AddListener(() => OnClick(7));
+        btn8.onClick.AddListener(() => OnClick(8));
+        btn9.onClick.AddListener(() => OnClick(9));
+
+        btn1.interactable = false;
+        btn2.interactable = false;
+        btn3.interactable = false;
+        btn4.interactable = false;
+        btn5.interactable = false;
+        btn6.interactable = false;
+        btn7.interactable = false;
+        btn8.interactable = false;
+        btn9.interactable = false;
+
+
+
+
         randomquest();
 
         coinswitch();
@@ -152,6 +188,19 @@ public class inputnumber : MonoBehaviour
         randomtextsecond();
         randomtextthird();
         randomtextforth();
+        timeset();
+    }
+
+    void timeset()
+    {
+        if (timerscore > 0)
+        {
+            timerscore -= Time.deltaTime;
+            timer.text = timerscore.ToString("F0");
+        }
+        else
+            timer.text = "0";
+
     }
 
     void randomtext()
@@ -266,7 +315,7 @@ public class inputnumber : MonoBehaviour
         {
             
                 inputthird[countthird] = numberingthird;
-                numberthird.text = string.Join(" ", inputthird);
+                numberthird.text = string.Join("", inputthird);
                 countthird++;
             
         }
@@ -275,7 +324,7 @@ public class inputnumber : MonoBehaviour
                 if (countthirdtwo < 2)
                 {
                     inputthirdtwo[countthirdtwo] = numberingthird;
-                    numberthirdtwo.text = string.Join(" ", inputthirdtwo);
+                    numberthirdtwo.text = string.Join("", inputthirdtwo);
                     countthirdtwo++;
                 }  
         }
@@ -290,7 +339,7 @@ public class inputnumber : MonoBehaviour
             if (countforth < 5)
             {
                 inputforth[countforth] = numberingforth;
-                numberforth.text = string.Join(" ", inputforth);
+                numberforth.text = string.Join("", inputforth);
                 countforth++;
 
 
@@ -303,7 +352,7 @@ public class inputnumber : MonoBehaviour
             if (countforth < 4)
             {
                 inputforth[countforth+1] = numberingforth;
-                numberforth.text = string.Join(" ", inputforth);
+                numberforth.text = string.Join("", inputforth);
                 countforth++;
 
             }
@@ -311,13 +360,23 @@ public class inputnumber : MonoBehaviour
         else if (originalprice<1000)
         {
             inputforth[countforth+2] = numberingforth;
-            numberforth.text = string.Join(" ", inputforth);
+            numberforth.text = string.Join("", inputforth);
             countforth++;
         }
 
 
     }
 
+
+    public void OnClick(int num)
+    {
+        if (countset < 4)
+        {
+            InputNumbers[countset] = "" + num;
+            Numtext.text = string.Join("", InputNumbers);
+            countset++;
+        }
+    }
 
     public void resetbutton()
     {
@@ -383,7 +442,7 @@ public class inputnumber : MonoBehaviour
                 resetbutton();
             calculatequestion.gameObject.SetActive(false);
             randomquest();
-            correctsound.Play();
+            pushsound.Play();
             correctcount++;
             }
             else
@@ -391,7 +450,7 @@ public class inputnumber : MonoBehaviour
                 answertext.text = "uncorrect";
                 randomnumber();
                 resetbutton();
-            uncorrectsound.Play();
+            pushsound.Play();
             calculatequestion.gameObject.SetActive(false);
             randomquest();
 
@@ -412,7 +471,7 @@ public class inputnumber : MonoBehaviour
             coinswitch();
             resetbuttonsecond();
             correctcount++;
-            correctsound.Play();
+            pushsound.Play();
             coinquestion.gameObject.SetActive(false);
             randomquest();
 
@@ -423,8 +482,8 @@ public class inputnumber : MonoBehaviour
 
             apple[coinranapple - 1].gameObject.SetActive(false);
             mikan[coinranmikan - 1].gameObject.SetActive(false);
-            
-            uncorrectsound.Play();
+
+            pushsound.Play();
             resetbuttonsecond();
             coinswitch();
             coinquestion.gameObject.SetActive(false);
@@ -443,8 +502,8 @@ public class inputnumber : MonoBehaviour
                 //questionanswertext.text = "correct";
                 randomcolor();
                 resetbuttonthird();
-                correctcount++;                
-                correctsound.Play();
+                correctcount++;
+                pushsound.Play();
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("1");
@@ -455,7 +514,7 @@ public class inputnumber : MonoBehaviour
                 //questionanswertext.text = "uncorrect";
                 randomcolor();
                 resetbuttonthird();
-                uncorrectsound.Play();
+                pushsound.Play();
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("2");
@@ -470,7 +529,7 @@ public class inputnumber : MonoBehaviour
                 randomcolor();
                 resetbuttonthird();                
                 correctcount++;
-                correctsound.Play();
+                pushsound.Play();
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("3");
@@ -482,7 +541,7 @@ public class inputnumber : MonoBehaviour
                 //questionanswertext.text = "uncorrect";
                 randomcolor();
                 resetbuttonthird();
-                uncorrectsound.Play();
+                pushsound.Play();
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("4");
@@ -500,7 +559,7 @@ public class inputnumber : MonoBehaviour
         {
             percentcorrecttext.text = "correct";
             randomprice();
-            correctsound.Play();
+            pushsound.Play();
             resetbuttonforth();
             percentquestion.gameObject.SetActive(false);
             randomquest();
@@ -510,7 +569,7 @@ public class inputnumber : MonoBehaviour
             percentcorrecttext.text = "uncorrect";
             randomprice();
             resetbuttonforth();
-            uncorrectsound.Play();
+            pushsound.Play();
             percentquestion.gameObject.SetActive(false);
             randomquest();
 
@@ -746,5 +805,7 @@ public class inputnumber : MonoBehaviour
 
 
     }
+
+    
 
 }
