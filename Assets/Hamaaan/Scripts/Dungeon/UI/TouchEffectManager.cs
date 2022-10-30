@@ -14,6 +14,14 @@ public class TouchEffectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject instanceObj = Instantiate(TouchEffect);
+            Destroy(instanceObj,1f);
+            instanceObj.transform.position = Input.mousePosition;
+            instanceObj.transform.SetParent(this.gameObject.transform);
+
+        }
+
     }
 }
