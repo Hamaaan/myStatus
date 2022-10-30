@@ -23,7 +23,9 @@ public class StaticValueManager : MonoBehaviour
     }
 
     //PlayerData
-    public float PlayerLevel = 1;
+    public string PlayerName = "ステモ";
+
+    public int PlayerLevel = 1;
     public float PlayerExp = 1;
     public float PlayerHP = 5;
     public float PlayerPower = 5;
