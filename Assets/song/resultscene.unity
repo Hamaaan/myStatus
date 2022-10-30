@@ -834,12 +834,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 560715403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd4d5e46b6cb4686a47542fca9a6fd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 634b2b58cb15d0345be1183a4dcc4690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   experience: {fileID: 200856368}
-  max: 2000
-  currency: 10
+  max: 1000
+  currency: 300
   nowexp: 0
   activecheck: 0
   experiencebutton: {fileID: 498505698}
@@ -850,8 +850,8 @@ MonoBehaviour:
   enemy: 0
   enemyset: 50
   enemytext: {fileID: 39240191}
-  plusexp: 0
-  plusexpset: 1500
+  plusexp: 500
+  plusexpset: 200
   plusexptext: {fileID: 170932926}
 --- !u!4 &560715405
 Transform:

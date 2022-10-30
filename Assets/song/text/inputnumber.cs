@@ -36,6 +36,12 @@ public class inputnumber : MonoBehaviour
     public int countforth;
     public int allforth;
 
+    //insert keypad5
+    [SerializeField] private Text numberfifth;
+    public int[] inputfifth;
+    public int countfifth;
+    public int allfifth;
+
     // question random number
     public Text randomone;
     public Text randomtwo;
@@ -95,6 +101,7 @@ public class inputnumber : MonoBehaviour
     public GameObject coinquestion;
     public GameObject questionquestion;
     public GameObject percentquestion;
+    public GameObject oboequestion;
 
     //price random
     public float originalprice;
@@ -113,22 +120,28 @@ public class inputnumber : MonoBehaviour
 
     public Text percentcorrecttext;
 
+    //randomoboeru
+    public int originaloboeru;
+    public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnreset, btnenter;
+    public float timecheck;
+    public Text oboerutext;
+    public float nokori;
+    public Text nokoritext;
+    public Text questionone;
+    public Text questiontwo;
+
+    // audio
     public AudioSource correctsound;
     public AudioSource uncorrectsound;
     public AudioSource pushsound;
 
-
-    public Text timer;
-    public float timerscore;
-
-    public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-
-    [SerializeField] private Text Numtext;
-    public string[] InputNumbers = new string[4];
-    public int countset;
-
-    public NumberChant TimeUp;
-
+    //counttime
+    public float counttime;
+    public float limittime;
+    public float remaintime;
+    public Text counttimetext;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -141,38 +154,20 @@ public class inputnumber : MonoBehaviour
         inputthird = new int[2];
         inputthirdtwo = new int[2];
         inputforth = new int[5];
+        inputfifth = new int[4];
 
         count = 0;
-        //button.onClick.AddListener(OnClick);
-        btn1.onClick.AddListener(() => OnClick(1));
-        btn2.onClick.AddListener(() => OnClick(2));
-        btn3.onClick.AddListener(() => OnClick(3));
-        btn4.onClick.AddListener(() => OnClick(4));
-        btn5.onClick.AddListener(() => OnClick(5));
-        btn6.onClick.AddListener(() => OnClick(6));
-        btn7.onClick.AddListener(() => OnClick(7));
-        btn8.onClick.AddListener(() => OnClick(8));
-        btn9.onClick.AddListener(() => OnClick(9));
-
-        btn1.interactable = false;
-        btn2.interactable = false;
-        btn3.interactable = false;
-        btn4.interactable = false;
-        btn5.interactable = false;
-        btn6.interactable = false;
-        btn7.interactable = false;
-        btn8.interactable = false;
-        btn9.interactable = false;
+        
+       
 
 
 
-
-        randomquest();
+       randomquest();
 
         coinswitch();
         randomcolor();
         randomprice();
-        
+        randomoboeru();
     }
 
     private void Awake()
@@ -188,20 +183,20 @@ public class inputnumber : MonoBehaviour
         randomtextsecond();
         randomtextthird();
         randomtextforth();
-        timeset();
+        randomtextfifth();
+
+        oboeruquestion();
+
+        timer();
     }
 
-    void timeset()
+    public void timer()
     {
-        if (timerscore > 0)
-        {
-            timerscore -= Time.deltaTime;
-            timer.text = timerscore.ToString("F0");
-        }
-        else
-            timer.text = "0";
-
+        counttime += Time.deltaTime;
+        remaintime = limittime - counttime;
+        counttimetext.text = remaintime.ToString("f0");
     }
+    
 
     void randomtext()
     {
@@ -261,6 +256,13 @@ public class inputnumber : MonoBehaviour
         }
        
     }
+
+    public void randomtextfifth()
+    {
+        allfifth = inputfifth[3] + inputfifth[2] * 10 + inputfifth[1] * 100 + inputfifth[0] * 1000;
+    }
+
+
 
     public void click(int numbering)
     {
@@ -367,16 +369,17 @@ public class inputnumber : MonoBehaviour
 
     }
 
-
-    public void OnClick(int num)
+    public void clickfifth(int numberingfifth)
     {
-        if (countset < 4)
+        if (countfifth < 4)
         {
-            InputNumbers[countset] = "" + num;
-            Numtext.text = string.Join("", InputNumbers);
-            countset++;
+            inputfifth[countfifth] = numberingfifth;
+            numberfifth.text = string.Join("", inputfifth);
+            countfifth++;
         }
     }
+
+   
 
     public void resetbutton()
     {
@@ -423,6 +426,16 @@ public class inputnumber : MonoBehaviour
 
     }
 
+    public void resetbuttonfifth()
+    {
+        for(int i = 0; i<4; i++)
+        {
+            inputfifth[i] = 0;
+            numberfifth.text = string.Join("", inputfifth);
+            countfifth = 0;
+        }
+    }
+
 
     public void randomnumber()
     {
@@ -444,6 +457,7 @@ public class inputnumber : MonoBehaviour
             randomquest();
             pushsound.Play();
             correctcount++;
+            timecheck = 0;
             }
             else
             {
@@ -453,7 +467,7 @@ public class inputnumber : MonoBehaviour
             pushsound.Play();
             calculatequestion.gameObject.SetActive(false);
             randomquest();
-
+            timecheck = 0;
         }
 
 
@@ -474,7 +488,7 @@ public class inputnumber : MonoBehaviour
             pushsound.Play();
             coinquestion.gameObject.SetActive(false);
             randomquest();
-
+            timecheck = 0;
         }
         else
         {
@@ -488,6 +502,7 @@ public class inputnumber : MonoBehaviour
             coinswitch();
             coinquestion.gameObject.SetActive(false);
             randomquest();
+            timecheck = 0;
         }
 
 
@@ -507,6 +522,7 @@ public class inputnumber : MonoBehaviour
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("1");
+                timecheck = 0;
 
             }
             else 
@@ -518,6 +534,7 @@ public class inputnumber : MonoBehaviour
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("2");
+                timecheck = 0;
             }
         }
 
@@ -533,7 +550,7 @@ public class inputnumber : MonoBehaviour
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("3");
-
+                timecheck = 0;
 
             }
             else
@@ -545,7 +562,7 @@ public class inputnumber : MonoBehaviour
                 questionquestion.gameObject.SetActive(false);
                 randomquest();
                 Debug.Log("4");
-
+                timecheck = 0;
             }
         }
 
@@ -563,6 +580,7 @@ public class inputnumber : MonoBehaviour
             resetbuttonforth();
             percentquestion.gameObject.SetActive(false);
             randomquest();
+            timecheck = 0;
         }
         else
         {
@@ -572,9 +590,35 @@ public class inputnumber : MonoBehaviour
             pushsound.Play();
             percentquestion.gameObject.SetActive(false);
             randomquest();
+            timecheck = 0;
 
         }
     }
+
+    public void correctfifth()
+    {
+        if(allfifth == originaloboeru)
+        {
+            Debug.Log("correct");
+            timecheck = 0;
+            oboeruquestion();
+            randomoboeru();
+            resetbuttonfifth();
+            oboequestion.gameObject.SetActive(false);
+            randomquest();
+        }
+        else
+        {
+            Debug.Log("uncorrect");
+            timecheck = 0;
+            oboeruquestion();
+            randomoboeru();
+            resetbuttonfifth();
+            oboequestion.gameObject.SetActive(false);
+            randomquest();
+        }
+    }
+
 
     public void coinswitch()
     {
@@ -693,7 +737,7 @@ public class inputnumber : MonoBehaviour
 
     public void randomquest()
     {
-        randomquestion = Random.Range(1, 5);
+        randomquestion = Random.Range(1, 6);
 
         if (randomquestion == 1)
         {
@@ -715,7 +759,15 @@ public class inputnumber : MonoBehaviour
             percentquestion.gameObject.SetActive(true);
             Debug.Log("stage4");
         }
-
+        if(randomquestion == 5)
+        {
+            oboequestion.gameObject.SetActive(true);
+            questionone.gameObject.SetActive(true);
+            questiontwo.gameObject.SetActive(true);
+            nokoritext.gameObject.SetActive(true);
+            oboerutext.gameObject.SetActive(true);
+            Debug.Log("stage5");
+        }
 
     }
 
@@ -806,6 +858,58 @@ public class inputnumber : MonoBehaviour
 
     }
 
-    
+
+    public void randomoboeru()
+    {
+        originaloboeru = Random.Range(1000, 10000);
+        oboerutext.text = originaloboeru.ToString();
+    }
+
+    public void oboeruquestion()
+    {
+        timecheck += Time.deltaTime;
+        nokori = 3 - timecheck;
+        nokoritext.text = nokori.ToString("f0");
+
+        if(timecheck < 3)
+        {
+            btn0.interactable = false;
+            btn1.interactable = false;
+            btn2.interactable = false;
+            btn3.interactable = false;
+            btn4.interactable = false;
+            btn5.interactable = false;
+            btn6.interactable = false;
+            btn7.interactable = false;
+            btn8.interactable = false;
+            btn9.interactable = false;
+            btnenter.interactable = false;
+            btnreset.interactable = false;
+        }
+        else
+        {
+            btn0.interactable = true;
+            btn1.interactable = true;
+            btn2.interactable = true;
+            btn3.interactable = true;
+            btn4.interactable = true;
+            btn5.interactable = true;
+            btn6.interactable = true;
+            btn7.interactable = true;
+            btn8.interactable = true;
+            btn9.interactable = true;
+            btnenter.interactable = true;
+            btnreset.interactable = true;
+
+            oboerutext.gameObject.SetActive(false);
+
+            questionone.gameObject.SetActive(false);
+            questiontwo.gameObject.SetActive(false);
+            nokoritext.gameObject.SetActive(false);
+
+        }
+
+    }
+
 
 }
