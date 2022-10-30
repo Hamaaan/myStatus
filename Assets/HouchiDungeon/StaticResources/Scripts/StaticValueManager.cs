@@ -40,6 +40,10 @@ public class StaticValueManager : MonoBehaviour
     public float MaxPlayerRange = 10;
     public float MaxPlayerSpeed = 10;
 
+    public float NextExp = 50;
+    public float BeforeExp;
+    public float StockExp;
+
     //Dungeon
     public bool isDungeonClear = false;
     public bool isSpecial = false;

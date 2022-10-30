@@ -20,6 +20,9 @@ public class PlayerLevelManager : MonoBehaviour
     private int PlusDefence;
     private int PlusPower;
 
+    private float NextExp = 10f;
+    private float BeforeExp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,5 +63,12 @@ public class PlayerLevelManager : MonoBehaviour
         _svm.MaxPlayerRange = _svm.PlayerRange / RatioRange;
         _svm.MaxPlayerDefence = _svm.PlayerDefence / RatioDefence;
         _svm.MaxPlayerPower = _svm.PlayerPower / RatioPower;  
+    }
+
+    public void LevelUp()
+    {
+        NextExp = (BeforeExp * 1.1f + (float)(_svm.PlayerLevel * 15)) / 2f;
+
+
     }
 }
