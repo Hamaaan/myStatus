@@ -44,6 +44,9 @@ public class StaticValueManager : MonoBehaviour
     public float BeforeExp = 0;
     public float StockExp = 0;
 
+    public float PlayerDistance = 0;
+
+
     //Dungeon
     public bool isDungeonClear = false;
     public bool isSpecial = false;

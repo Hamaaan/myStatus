@@ -27,7 +27,16 @@ namespace Platformer.Mechanics
             if (enemy)
             {
                 RandomDamage = Random.Range(0,2);
-                enemy.GetDamage(Damage + RandomDamage);
+                if (StaticValueManager.instance.isSpecial)
+                {
+                    enemy.GetDamage(Damage * 2 + RandomDamage);
+
+                }
+                else
+                {
+                    enemy.GetDamage(Damage + RandomDamage);
+
+                }
             }
         }
     }
