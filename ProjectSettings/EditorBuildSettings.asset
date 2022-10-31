@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/song/testcoin.unity
-    guid: 9f02d5d7859d7491ebe466f6fc0b5fd0
-  - enabled: 0
     path: Assets/Hamaaan/Scenes/TITLE.unity
     guid: d5ff84e3fdaa3e24ea733bb4f94f84b2
   - enabled: 0
@@ -38,7 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/Intro.unity
     guid: f31d2423b04050244b4572c946937ca5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Hamaaan/Scenes/HouchDungeon/MiniGameDummy.unity
     guid: bc4c36ba3156a5b48af44b063cf2963b
   - enabled: 1
@@ -47,6 +44,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/Dungeon001.unity
     guid: fad55e7f82faa234b8e561567433cecc
+  - enabled: 1
+    path: Assets/song/testcoin.unity
+    guid: 9f02d5d7859d7491ebe466f6fc0b5fd0
+  - enabled: 1
+    path: Assets/song/testoboeru.unity
+    guid: 621c0091f7b1640e7a5d864b75886af0
   - enabled: 0
     path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Home.unity
     guid: 20f37c60ef072ff40a099ba0ac209b4b
