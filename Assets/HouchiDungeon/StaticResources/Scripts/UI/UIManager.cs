@@ -14,6 +14,7 @@ namespace naichilab
         //public Text PlayerName;
         public RadarChartPolygonUGUI RadarPolygon;
 
+        public Image ExpFillImage;
 
 
         // Start is called before the first frame update
@@ -37,6 +38,10 @@ namespace naichilab
             ExpText.text = _svm.PlayerExp.ToString();
         }
 
-
+        void TransitionExp()
+        {
+            float TransExp = _svm.PlayerExp - _svm.StockExp;
+            ExpFillImage.fillAmount = TransExp / _svm.NextExp;
+        }
     }
 }
