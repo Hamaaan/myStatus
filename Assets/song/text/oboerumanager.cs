@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class oboerumanager : MonoBehaviour
 {
@@ -24,6 +24,10 @@ public class oboerumanager : MonoBehaviour
 
 
     public GameObject oboequestion;
+
+    public GameObject videoplay;
+    public Button gohomebutton;
+    public float gohomebuttontimer;
 
 
     // Start is called before the first frame update
@@ -77,7 +81,7 @@ public class oboerumanager : MonoBehaviour
             //randomoboeru();
             //resetbuttonfifth();
             //oboequestion.gameObject.SetActive(false);
-            
+            videoplay.gameObject.SetActive(true);
         }
         else
         {
@@ -87,7 +91,7 @@ public class oboerumanager : MonoBehaviour
             //randomoboeru();
             //resetbuttonfifth();
             //oboequestion.gameObject.SetActive(false);
-            
+            videoplay.gameObject.SetActive(true);
         }
     }
 
@@ -141,6 +145,11 @@ public class oboerumanager : MonoBehaviour
 
         }
 
+    }
+
+    public void goHome()
+    {
+        SceneManager.LoadScene("Home");
     }
 
 }
