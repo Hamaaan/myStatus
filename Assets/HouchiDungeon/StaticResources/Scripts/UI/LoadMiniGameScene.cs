@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadMiniGameScene : MonoBehaviour
 {
     public float AudioVolume = 1f;
-    public string SceneName;
+    public string[] SceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class LoadMiniGameScene : MonoBehaviour
 
     public void SceneChangeTo()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(SceneName[Random.Range(0, SceneName.Length)]);
     }
 }
