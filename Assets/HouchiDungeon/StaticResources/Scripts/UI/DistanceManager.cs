@@ -30,5 +30,7 @@ public class DistanceManager : MonoBehaviour
         {
             text.text = ((int)distance).ToString();
         }
+
+        StaticValueManager.instance.PlayerDistance = distance;
     }
 }
