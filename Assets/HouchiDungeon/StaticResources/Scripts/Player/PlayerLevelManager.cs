@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace naichilab
-{
+
     public class PlayerLevelManager : MonoBehaviour
     {
         StaticValueManager _svm;
 
-        UIManager _uim;
-
+       
         //最大値との比率
         private float RatioHP;
         private float RatioSpeed;
@@ -41,7 +39,7 @@ namespace naichilab
         // Update is called once per frame
         void Update()
         {
-
+            CaliculateExp();
         }
 
         void CaliculateExp()
@@ -51,12 +49,7 @@ namespace naichilab
             if (TransExp >= _svm.NextExp)
             {
                 LevelUp();
-                /*
-                for (int i = 0; i < 8; i++)
-                {
-                    _uim.ExpEmpty(i);
-                }
-                */
+
             }
         }
 
@@ -96,4 +89,4 @@ namespace naichilab
 
     }
 
-}
+

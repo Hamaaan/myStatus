@@ -36,6 +36,7 @@ namespace naichilab
         {
             LevelText.text = _svm.PlayerLevel.ToString();
             ExpText.text = _svm.PlayerExp.ToString();
+            TransitionExp();
         }
 
         void TransitionExp()
