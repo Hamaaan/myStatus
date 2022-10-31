@@ -15,7 +15,7 @@ namespace naichilab
         public RadarChartPolygonUGUI RadarPolygon;
 
         public Image ExpFillImage;
-
+        [SerializeField] float value = 0;
 
         // Start is called before the first frame update
         void Start()
@@ -28,7 +28,7 @@ namespace naichilab
             RadarPolygon.Volumes[3] = _svm.PlayerDefence/_svm.MaxPlayerDefence;
             RadarPolygon.Volumes[4] = _svm.PlayerPower/_svm.MaxPlayerPower;
 
-          
+            ExpFillImage = ExpFillImage.GetComponent<Image>();
         }
 
         // Update is called once per frame
