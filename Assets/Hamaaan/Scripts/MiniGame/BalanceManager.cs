@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BalanceManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class BalanceManager : MonoBehaviour
     public int measureWeight = 0;
     public int targetWeight = 0;
     [SerializeField] Text TargetWeightText;
+
+    public GameObject videoplay;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,7 @@ public class BalanceManager : MonoBehaviour
             joint.limits = LerpLimittsChange(lerpTime + 0.5f);
 
             TargetWeightText.text = "クリア！！！";
+            videoplay.gameObject.SetActive(true);
         }
         else
         {
@@ -71,6 +75,11 @@ public class BalanceManager : MonoBehaviour
 
     }
 
+    public void gohome()
+    {
+        SceneManager.LoadScene("Home");
+    }
+
     float lerpTime = 0f;
 
     JointAngleLimits2D LerpLimittsChange(float t)
@@ -81,5 +90,6 @@ public class BalanceManager : MonoBehaviour
 
         return lm;
     }
+
 
 }
