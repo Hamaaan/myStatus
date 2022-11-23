@@ -44,6 +44,8 @@ public class StaticValueManager : MonoBehaviour
     public float BeforeExp = 0;
     public float StockExp = 0;
 
+    public float BeforeTotalExp = 0;
+
     public float PlayerDistance = 0;
 
 

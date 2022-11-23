@@ -29,7 +29,7 @@ public class DateDisplay : MonoBehaviour
         ExpText = ExpText.GetComponent<Text>();
         NextText = NextText.GetComponent<Text>();
 
-
+        _svm = StaticValueManager.instance;
     }
 
     // Update is called once per frame
@@ -37,6 +37,8 @@ public class DateDisplay : MonoBehaviour
     {
         DateText.text = Today.Year.ToString() + Today.Month.ToString() + Today.Day.ToString();
 
-
+        DistanceText.text = _svm.PlayerDistance.ToString("N2");
+        ExpText.text = _svm.BeforeTotalExp.ToString();
+        NextText.text = _svm.NextExp.ToString();
     }
 }

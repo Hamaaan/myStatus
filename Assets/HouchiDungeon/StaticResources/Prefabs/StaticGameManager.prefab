@@ -3411,6 +3411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DateText: {fileID: 3394707878976078294}
+  DistanceText: {fileID: 8448119612610689796}
+  ExpText: {fileID: 6340027776747991159}
+  NextText: {fileID: 9122018094785606311}
 --- !u!1 &2892310243841788186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6441,6 +6444,7 @@ MonoBehaviour:
   NextExp: 50
   BeforeExp: 0
   StockExp: 0
+  BeforeTotalExp: 0
   PlayerDistance: 0
   isDungeonClear: 0
   isSpecial: 0
