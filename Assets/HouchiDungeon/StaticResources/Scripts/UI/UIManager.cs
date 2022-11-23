@@ -9,9 +9,10 @@ namespace naichilab
     {
         StaticValueManager _svm;
 
+
         public Text LevelText;
         public Text ExpText;
-        //public Text PlayerName;
+        public Text PlayerName;
         public RadarChartPolygonUGUI RadarPolygon;
 
         public Image ExpFillImage;
@@ -29,6 +30,8 @@ namespace naichilab
             RadarPolygon.Volumes[4] = _svm.PlayerPower/_svm.MaxPlayerPower;
 
             ExpFillImage = ExpFillImage.GetComponent<Image>();
+
+            PlayerName = PlayerName.GetComponent<Text>();
         }
 
         // Update is called once per frame
@@ -37,6 +40,7 @@ namespace naichilab
             LevelText.text = _svm.PlayerLevel.ToString();
             ExpText.text = _svm.PlayerExp.ToString();
             TransitionExp();
+            PlayerName.text = OpeningSceneManager.GetUserName();
         }
 
         void TransitionExp()
