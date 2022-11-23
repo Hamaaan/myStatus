@@ -52,6 +52,8 @@ public class StaticValueManager : MonoBehaviour
     //Dungeon
     public bool isDungeonClear = false;
     public bool isSpecial = false;
+    //MinigameBuff
+    public string PreMiniGameScene = "";
 
     //Home
     public bool isRestTime = false;

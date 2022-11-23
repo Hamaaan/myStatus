@@ -8,10 +8,12 @@ public class LoadMiniGameScene : MonoBehaviour
     public float AudioVolume = 1f;
     public string[] SceneName;
 
+    StaticValueManager _svm;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _svm = StaticValueManager.instance;
     }
 
     // Update is called once per frame
@@ -22,6 +24,8 @@ public class LoadMiniGameScene : MonoBehaviour
 
     public void SceneChangeTo()
     {
-        SceneManager.LoadScene(SceneName[Random.Range(0, SceneName.Length)]);
+        string minigame = SceneName[Random.Range(0, SceneName.Length)];
+        _svm.PreMiniGameScene = minigame;
+        SceneManager.LoadScene(minigame);
     }
 }
