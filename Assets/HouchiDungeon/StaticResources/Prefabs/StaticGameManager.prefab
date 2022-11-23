@@ -5783,16 +5783,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: baa7ad03bee164b4285ad241b21d5634, type: 3}
   - {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
   - {fileID: 8300000, guid: 5833894e2899f1840ac04193ca462e39, type: 3}
+  - {fileID: 8300000, guid: ae79b2ecf54ce47b69742886da72db94, type: 3}
+  - {fileID: 8300000, guid: ae79b2ecf54ce47b69742886da72db94, type: 3}
   SceneName:
   - Home
   - Dungeon001
   - MiniGameDummy
   - Intro
+  - testcoin
+  - testoboeru
   SceneBGMVolume:
   - 0.18
   - 0.077
   - 0.01
   - 0
+  - 0.01
+  - 0.01
 --- !u!1 &5650450950141303458
 GameObject:
   m_ObjectHideFlags: 0

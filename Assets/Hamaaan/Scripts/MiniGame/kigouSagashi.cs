@@ -39,7 +39,7 @@ public class kigouSagashi : MonoBehaviour, IPointerClickHandler
         GameObject SagasuInstance;
         SagasuInstance = Instantiate(KigouPrefab[TargetNumber]);
         SagasuInstance.transform.position = SagasuObject.transform.position;
-        SagasuInstance.transform.localScale = new Vector3(2f, 2f, 2f);
+        SagasuInstance.transform.localScale = new Vector3(10f, 10f, 10f);
         SagasuInstance.transform.parent = SagasuObject.transform;
 
     }
