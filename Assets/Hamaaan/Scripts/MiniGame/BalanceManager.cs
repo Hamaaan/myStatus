@@ -22,6 +22,13 @@ public class BalanceManager : MonoBehaviour
 
     public GameObject videoplay;
 
+    public float clearopentimer;
+
+    public Button gohomebutton;
+    public float gohomebuttontimer;
+    public bool buttoncheck = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +44,28 @@ public class BalanceManager : MonoBehaviour
         col = col.GetComponent<Collider2D>();
     }
 
+    public void gohomebuttontimecheck()
+    {
+        if (buttoncheck)
+            gohomebuttontimer += Time.deltaTime;
+
+        if (gohomebuttontimer > 3)
+        {
+            gohomebutton.interactable = true;
+        }
+        else
+        {
+            gohomebutton.interactable = false;
+        }
+
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
+        gohomebuttontimecheck();
         JointAngleLimits2D BalanceLimits = new JointAngleLimits2D();
         BalanceLimits.max = 0;
         BalanceLimits.min = 0;
@@ -61,8 +87,10 @@ public class BalanceManager : MonoBehaviour
             }
             joint.limits = LerpLimittsChange(lerpTime + 0.5f);
 
-            TargetWeightText.text = "クリア！！！";
-            videoplay.gameObject.SetActive(true);
+            //TargetWeightText.text = "クリア！！！";
+            clearopentimer += Time.deltaTime;
+
+            //videoplay.gameObject.SetActive(true);
         }
         else
         {
@@ -73,6 +101,12 @@ public class BalanceManager : MonoBehaviour
 
         }
 
+        if (clearopentimer > 3f)
+        {
+            videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
+        }
+            
     }
 
     public void gohome()

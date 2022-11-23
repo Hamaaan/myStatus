@@ -133,6 +133,7 @@ public class inputnumber : MonoBehaviour
     public GameObject videoplay;
     public Button gohomebutton;
     public float gohomebuttontimer;
+    public bool buttoncheck= false;
     
     
 
@@ -176,13 +177,14 @@ public class inputnumber : MonoBehaviour
         randomtextsecond();
         randomtextthird();
         randomtextforth();
+        gohomebuttontimecheck();
 
         timer();
     }
 
     public void gohomebuttontimecheck()
     {
-
+        if(buttoncheck)
         gohomebuttontimer += Time.deltaTime;
 
         if (gohomebuttontimer > 3)
@@ -447,7 +449,7 @@ public class inputnumber : MonoBehaviour
             pushsound.Play();
             //correctcount++;
             videoplay.gameObject.SetActive(true);
-            
+            buttoncheck = true;
             }
             else
             {
@@ -458,6 +460,7 @@ public class inputnumber : MonoBehaviour
             //calculatequestion.gameObject.SetActive(false);
             //randomquest();
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
         }
 
 
@@ -479,6 +482,7 @@ public class inputnumber : MonoBehaviour
             //coinquestion.gameObject.SetActive(false);
             //randomquest();
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
         }
         else
         {
@@ -493,6 +497,7 @@ public class inputnumber : MonoBehaviour
             //coinquestion.gameObject.SetActive(false);
             // randomquest();
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
         }
 
 
@@ -513,6 +518,7 @@ public class inputnumber : MonoBehaviour
                 //randomquest();
                 //Debug.Log("1");
                 videoplay.gameObject.SetActive(true);
+                buttoncheck = true;
 
             }
             else 
@@ -525,6 +531,7 @@ public class inputnumber : MonoBehaviour
                 //randomquest();
                 //Debug.Log("2");
                 videoplay.gameObject.SetActive(true);
+                buttoncheck = true;
             }
         }
 
@@ -541,6 +548,7 @@ public class inputnumber : MonoBehaviour
                 // randomquest();
                 // Debug.Log("3");
                 videoplay.gameObject.SetActive(true);
+                buttoncheck = true;
 
             }
             else
@@ -553,6 +561,7 @@ public class inputnumber : MonoBehaviour
                 //randomquest();
                 //Debug.Log("4");
                 videoplay.gameObject.SetActive(true);
+                buttoncheck = true;
             }
         }
 
@@ -572,6 +581,7 @@ public class inputnumber : MonoBehaviour
             //randomquest();
             //correctcount++;
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
         }
         else
         {
@@ -582,6 +592,7 @@ public class inputnumber : MonoBehaviour
             //percentquestion.gameObject.SetActive(false);
             //randomquest();
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
 
         }
     }
