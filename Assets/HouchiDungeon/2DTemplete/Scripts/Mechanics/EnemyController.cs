@@ -98,6 +98,8 @@ namespace Platformer.Mechanics
         {
             StaticValueManager.instance.NumberOfKills++;
             StaticValueManager.instance.PlayerExp += (EXP+ Random.Range(0,EXP_RandomRange));
+
+            //_svmのBeforeTortalExpに加算
         }
 
         public void OnCollisionExit2D(Collision2D collision)

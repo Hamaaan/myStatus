@@ -5,6 +5,13 @@ using UnityEngine;
 public class SpecialManager : MonoBehaviour
 {
     [SerializeField] GameObject Special;
+
+    [SerializeField] GameObject Fire;
+    [SerializeField] GameObject Leaf;
+    [SerializeField] GameObject Water;
+    [SerializeField] GameObject Cray;
+    [SerializeField] GameObject Gold;
+
     // Start is called before the first frame update
     void Start()
     {
