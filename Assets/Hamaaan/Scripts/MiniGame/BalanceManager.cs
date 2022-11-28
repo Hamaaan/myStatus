@@ -28,6 +28,13 @@ public class BalanceManager : MonoBehaviour
     public float gohomebuttontimer;
     public bool buttoncheck = false;
 
+    public float counttime;
+
+    public Text counttimetext;
+
+
+    public float buffomori;
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +72,7 @@ public class BalanceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer();
         gohomebuttontimecheck();
         JointAngleLimits2D BalanceLimits = new JointAngleLimits2D();
         BalanceLimits.max = 0;
@@ -89,7 +97,8 @@ public class BalanceManager : MonoBehaviour
 
             //TargetWeightText.text = "クリア！！！";
             clearopentimer += Time.deltaTime;
-
+            buffomori = Mathf.Round((7 / counttime) * 3 * 10f) * 0.1f;
+            
             //videoplay.gameObject.SetActive(true);
         }
         else
@@ -107,6 +116,13 @@ public class BalanceManager : MonoBehaviour
             buttoncheck = true;
         }
             
+    }
+
+    public void timer()
+    {
+        counttime += Time.deltaTime;
+        counttimetext.text = counttime.ToString("f0");
+
     }
 
     public void gohome()

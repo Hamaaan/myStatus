@@ -126,9 +126,11 @@ public class inputnumber : MonoBehaviour
 
     //counttime
     public float counttime;
-    public float limittime;
-    public float remaintime;
+    
     public Text counttimetext;
+
+   
+    public float buffsannsuu;
 
     public GameObject videoplay;
     public Button gohomebutton;
@@ -203,14 +205,14 @@ public class inputnumber : MonoBehaviour
     public void timer()
     {
         counttime += Time.deltaTime;
-        remaintime = limittime - counttime;
-        counttimetext.text = remaintime.ToString("f0");
+        counttimetext.text = counttime.ToString("f0");
+
     }
     
 
     void randomtext()
     {
-        randomone.text = ranone.ToString();
+        randomone.text = ranone.ToString(); 
         randomtwo.text = rantwo.ToString();
         counttext.text = correctcount.ToString();
 
@@ -450,6 +452,11 @@ public class inputnumber : MonoBehaviour
             //correctcount++;
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
+
+            
+            buffsannsuu = Mathf.Round((7 / counttime) * 3 * 10f)*0.1f;
+
+            
             }
             else
             {
@@ -461,6 +468,7 @@ public class inputnumber : MonoBehaviour
             //randomquest();
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
+            buffsannsuu = Mathf.Round(7 / counttime * 10f) * 0.1f;
         }
 
 
@@ -483,6 +491,8 @@ public class inputnumber : MonoBehaviour
             //randomquest();
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
+
+            buffsannsuu = Mathf.Round((10 / counttime) * 3 * 10f) * 0.1f;
         }
         else
         {
@@ -498,6 +508,8 @@ public class inputnumber : MonoBehaviour
             // randomquest();
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
+
+            buffsannsuu = Mathf.Round(10 / counttime * 10f) * 0.1f;
         }
 
 
@@ -519,7 +531,7 @@ public class inputnumber : MonoBehaviour
                 //Debug.Log("1");
                 videoplay.gameObject.SetActive(true);
                 buttoncheck = true;
-
+                buffsannsuu = Mathf.Round((10 / counttime) * 3 * 10f) * 0.1f;
             }
             else 
             {
@@ -532,6 +544,7 @@ public class inputnumber : MonoBehaviour
                 //Debug.Log("2");
                 videoplay.gameObject.SetActive(true);
                 buttoncheck = true;
+                buffsannsuu = Mathf.Round(10 / counttime * 10f) * 0.1f;
             }
         }
 
@@ -549,6 +562,7 @@ public class inputnumber : MonoBehaviour
                 // Debug.Log("3");
                 videoplay.gameObject.SetActive(true);
                 buttoncheck = true;
+                buffsannsuu = Mathf.Round((10 / counttime) * 3 * 10f) * 0.1f;
 
             }
             else
@@ -562,6 +576,7 @@ public class inputnumber : MonoBehaviour
                 //Debug.Log("4");
                 videoplay.gameObject.SetActive(true);
                 buttoncheck = true;
+                buffsannsuu = Mathf.Round(10 / counttime * 10f) * 0.1f;
             }
         }
 
@@ -582,6 +597,7 @@ public class inputnumber : MonoBehaviour
             //correctcount++;
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
+            buffsannsuu = Mathf.Round((50 / counttime) * 3 * 10f) * 0.1f;
         }
         else
         {
@@ -593,7 +609,7 @@ public class inputnumber : MonoBehaviour
             //randomquest();
             videoplay.gameObject.SetActive(true);
             buttoncheck = true;
-
+            buffsannsuu = Mathf.Round(50 / counttime * 10f) * 0.1f;
         }
     }
 

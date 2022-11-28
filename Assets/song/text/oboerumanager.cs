@@ -28,6 +28,14 @@ public class oboerumanager : MonoBehaviour
     public GameObject videoplay;
     public Button gohomebutton;
     public float gohomebuttontimer;
+    public bool buttoncheck = false;
+
+    public float counttime;
+
+    public Text counttimetext;
+
+
+    public float buffoboeru;
 
 
     // Start is called before the first frame update
@@ -44,6 +52,33 @@ public class oboerumanager : MonoBehaviour
         randomtextfifth();
 
         oboeruquestion();
+
+        gohomebuttontimecheck();
+        timer();
+    }
+
+    public void gohomebuttontimecheck()
+    {
+        if (buttoncheck)
+            gohomebuttontimer += Time.deltaTime;
+
+        if (gohomebuttontimer > 3)
+        {
+            gohomebutton.interactable = true;
+        }
+        else
+        {
+            gohomebutton.interactable = false;
+        }
+
+
+    }
+
+    public void timer()
+    {
+        counttime += Time.deltaTime;
+        counttimetext.text = counttime.ToString("f0");
+
     }
 
     public void randomtextfifth()
@@ -82,6 +117,8 @@ public class oboerumanager : MonoBehaviour
             //resetbuttonfifth();
             //oboequestion.gameObject.SetActive(false);
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
+            buffoboeru = Mathf.Round((8 / counttime) * 3 * 10f) * 0.1f;
         }
         else
         {
@@ -92,6 +129,8 @@ public class oboerumanager : MonoBehaviour
             //resetbuttonfifth();
             //oboequestion.gameObject.SetActive(false);
             videoplay.gameObject.SetActive(true);
+            buttoncheck = true;
+            buffoboeru = Mathf.Round((8 / counttime) * 10f) * 0.1f;
         }
     }
 

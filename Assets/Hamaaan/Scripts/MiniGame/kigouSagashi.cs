@@ -15,7 +15,21 @@ public class kigouSagashi : MonoBehaviour, IPointerClickHandler
     [SerializeField] GameObject SagasuObject;
 
     [SerializeField] int TargetLength = 0;
-    
+
+    public Text count;
+
+    public GameObject videoplay;
+    public Button gohomebutton;
+    public float gohomebuttontimer;
+    public bool buttoncheck = false;
+
+
+    public float counttime;
+
+    public Text counttimetext;
+
+    public float buffsannsuu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +65,17 @@ public class kigouSagashi : MonoBehaviour, IPointerClickHandler
         {
 
         }
+
+        count.text = TargetLength.ToString();
+        gohomebuttontimecheck();
+        timer();
+    }
+
+    public void timer()
+    {
+        counttime += Time.deltaTime;
+        counttimetext.text = counttime.ToString("f0");
+
     }
 
 
@@ -69,9 +94,34 @@ public class kigouSagashi : MonoBehaviour, IPointerClickHandler
 
             if (TargetLength < 1)
             {
-                SceneManager.LoadScene("IQ_KigouSagashi");
-
+                //SceneManager.LoadScene("IQ_KigouSagashi");
+                videoplay.gameObject.SetActive(true);
+                buttoncheck = true;
+                buffsannsuu = Mathf.Round(25 / counttime * 10f) * 0.1f;
             }
         }
     }
+
+    public void goHome()
+    {
+        SceneManager.LoadScene("Home");
+    }
+
+    public void gohomebuttontimecheck()
+    {
+        if (buttoncheck)
+            gohomebuttontimer += Time.deltaTime;
+
+        if (gohomebuttontimer > 3)
+        {
+            gohomebutton.interactable = true;
+        }
+        else
+        {
+            gohomebutton.interactable = false;
+        }
+
+
+    }
+
 }
