@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +14,7 @@ public class ShuffleHiragana : MonoBehaviour
          for(int i=0; i<8; i++)
         {
             //HiraganaListの中からランダムで1つを選ぶ
-            //randomObj = HiraganaList[Random.Range(0, HiraganaList.Count)];
-            randomObj = HiraganaList[Random.Range(0, 1)];
+            randomObj = HiraganaList[Random.Range(0, 45)];
             //選んだオブジェクトをuseListに追加
             HiraganaUseList.Add(randomObj);
             //選んだオブジェクトのリスト番号を取得
