@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/song/testoboeru.unity
     guid: 621c0091f7b1640e7a5d864b75886af0
+  - enabled: 1
+    path: Assets/song/testomori.unity
+    guid: f34a6a8a3a4e64022bc71e1316f34fac
   - enabled: 0
     path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Home.unity
     guid: 20f37c60ef072ff40a099ba0ac209b4b

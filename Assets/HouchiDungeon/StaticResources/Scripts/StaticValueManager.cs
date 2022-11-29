@@ -86,6 +86,7 @@ public class StaticValueManager : MonoBehaviour
         {
             isTimerOn = true;
         }
+
     }
 
     public void subroutine()

@@ -878,8 +878,10 @@ MonoBehaviour:
   destroyed: {fileID: 8300000, guid: 88b9b62723d339b4da5013070f6aaa65, type: 3}
   spriteRenderer: {fileID: 1633520104010599585}
   EnemyHP: 0
-  MinHP: 2
-  MaxHP: 7
+  MinHP: 1
+  MaxHP: 1
+  EXP: 4
+  EXP_RandomRange: 4
   isFly: 0
   DamageEffectPrefab: {fileID: 7434264474681622377, guid: 2a9f92c6217511942bc0ae66261a2295,
     type: 3}

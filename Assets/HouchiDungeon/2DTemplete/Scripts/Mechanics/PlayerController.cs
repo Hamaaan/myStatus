@@ -54,6 +54,23 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+
+            
+            
+            
+        }
+
+        private void Start()
+        {
+            if (StaticValueManager.instance.PreMiniGameScene == "IQ_KigouSagashi 1")
+            {
+                moveSpeed = 0.3f;
+            }
+
+            if (StaticValueManager.instance.PreMiniGameScene == "testcoin")
+            {
+                
+            }
         }
 
         protected override void Update()

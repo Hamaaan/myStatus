@@ -98,6 +98,11 @@ namespace Platformer.Mechanics
         {
             StaticValueManager.instance.NumberOfKills++;
             StaticValueManager.instance.PlayerExp += (EXP+ Random.Range(0,EXP_RandomRange));
+            if (StaticValueManager.instance.PreMiniGameScene =="testomori")
+            {
+                StaticValueManager.instance.PlayerExp += (Random.Range(0, EXP_RandomRange));
+
+            }
 
             //_svmのBeforeTortalExpに加算
         }

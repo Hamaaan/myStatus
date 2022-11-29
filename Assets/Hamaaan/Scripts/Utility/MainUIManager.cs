@@ -16,8 +16,11 @@ public class MainUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticValueManager.instance.ActiveSceneName == "testcoin"
-            || StaticValueManager.instance.ActiveSceneName == "testoboeru")
+        if (StaticValueManager.instance.ActiveSceneName == "IQ_puzzle1"
+            || StaticValueManager.instance.ActiveSceneName == "IQ_KigouSagashi 1"
+            || StaticValueManager.instance.ActiveSceneName == "testcoin"
+            || StaticValueManager.instance.ActiveSceneName == "testoboeru"
+            || StaticValueManager.instance.ActiveSceneName == "testomori")
         {
             MainUI.SetActive(false);
         }
