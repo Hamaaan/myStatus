@@ -29,12 +29,7 @@ namespace Platformer.Mechanics
                 RandomDamage = Random.Range(0,2);
                 if (StaticValueManager.instance.isSpecial)
                 {
-                    if (StaticValueManager.instance.PreMiniGameScene == "IQ_puzzle1")
-                    {
-                        enemy.GetDamage(Damage * 2 + RandomDamage);
-
-                    }
-
+                    enemy.GetDamage(Damage * 2 + RandomDamage);
                 }
                 else
                 {
