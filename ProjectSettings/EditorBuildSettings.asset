@@ -30,11 +30,14 @@ EditorBuildSettings:
     path: Assets/Nakamura/Scenes/IQ_NumberChant 1.unity
     guid: 51e78097c20b241249cfeccfa84c4aae
   - enabled: 1
-    path: Assets/Hamaaan/Scenes/HouchDungeon/Start.unity
-    guid: e4aee9184d4a5f94f89437bb355867d2
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Opening 1.unity
+    guid: 90e2c39187535254a8e9adc6c95a8ce4
   - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/Intro.unity
     guid: f31d2423b04050244b4572c946937ca5
+  - enabled: 1
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Start.unity
+    guid: e4aee9184d4a5f94f89437bb355867d2
   - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/Home.unity
     guid: 9e60314d9483c724493a196035f3af58
@@ -44,28 +47,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/MiniGameDummy.unity
     guid: bc4c36ba3156a5b48af44b063cf2963b
-  - enabled: 1
+  - enabled: 0
     path: Assets/song/testcoin.unity
     guid: 9f02d5d7859d7491ebe466f6fc0b5fd0
-  - enabled: 1
+  - enabled: 0
     path: Assets/song/testoboeru.unity
     guid: 621c0091f7b1640e7a5d864b75886af0
-  - enabled: 1
+  - enabled: 0
     path: Assets/song/testomori.unity
     guid: f34a6a8a3a4e64022bc71e1316f34fac
-  - enabled: 0
-    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Home.unity
-    guid: 20f37c60ef072ff40a099ba0ac209b4b
-  - enabled: 0
-    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Dungeon001.unity
-    guid: 99691cae0d8e4024f9c86e4dd5429904
-  - enabled: 1
-    path: Assets/Hamaaan/Scenes/HouchDungeon/Opening.unity
-    guid: ae68aeb9ad0c745d4be49d077e629691
   - enabled: 1
     path: Assets/Ono/kigou/IQ_KigouSagashi 1.unity
     guid: 0ca098510f7c0954a83bcea4d6a6ed43
   - enabled: 1
     path: Assets/Ono/IQPuzzle/scenes/IQ_puzzle1.unity
     guid: e11e78e8dc3fc514483e13481c738119
+  - enabled: 1
+    path: Assets/Ono/testcoin 2.unity
+    guid: e3c1d00e6fd6a18499ae6934837fa14b
+  - enabled: 1
+    path: Assets/Ono/testoboeru 1.unity
+    guid: 036a80d79a64abd47b0bcd909caf760e
+  - enabled: 1
+    path: Assets/Ono/testomori 1.unity
+    guid: 20ab8a628d527904482e7e6a8b099520
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Home.unity
+    guid: 20f37c60ef072ff40a099ba0ac209b4b
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/HouchDungeon/1030/Dungeon001.unity
+    guid: 99691cae0d8e4024f9c86e4dd5429904
+  - enabled: 0
+    path: Assets/Hamaaan/Scenes/HouchDungeon/Opening.unity
+    guid: ae68aeb9ad0c745d4be49d077e629691
   m_configObjects: {}

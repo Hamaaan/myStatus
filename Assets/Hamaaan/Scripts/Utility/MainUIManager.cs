@@ -18,9 +18,9 @@ public class MainUIManager : MonoBehaviour
     {
         if (StaticValueManager.instance.ActiveSceneName == "IQ_puzzle1"
             || StaticValueManager.instance.ActiveSceneName == "IQ_KigouSagashi 1"
-            || StaticValueManager.instance.ActiveSceneName == "testcoin"
-            || StaticValueManager.instance.ActiveSceneName == "testoboeru"
-            || StaticValueManager.instance.ActiveSceneName == "testomori")
+            || StaticValueManager.instance.ActiveSceneName == "testcoin 2"
+            || StaticValueManager.instance.ActiveSceneName == "testoboeru 1"
+            || StaticValueManager.instance.ActiveSceneName == "testomori 1")
         {
             MainUI.SetActive(false);
         }
