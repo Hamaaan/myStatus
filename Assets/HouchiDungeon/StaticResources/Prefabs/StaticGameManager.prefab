@@ -6441,6 +6441,7 @@ MonoBehaviour:
   PlayerDistance: 0
   isDungeonClear: 0
   isSpecial: 0
+  PreMiniGameScene: 
   isRestTime: 0
   isTimerOn: 0
   isTimerStart: 0
@@ -11249,6 +11250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelText: {fileID: 6270962734616111353}
   ExpText: {fileID: 6270962734615421932}
+  PlayerName: {fileID: 6270962733485927589}
   RadarPolygon: {fileID: 6270962733869371011}
   ExpFillImage: {fileID: 6270962733231394455}
   value: 0
