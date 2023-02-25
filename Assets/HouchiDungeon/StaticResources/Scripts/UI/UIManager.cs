@@ -40,7 +40,7 @@ namespace naichilab
             LevelText.text = _svm.PlayerLevel.ToString();
             ExpText.text = _svm.PlayerExp.ToString();
             TransitionExp();
-            PlayerName.text = OpeningSceneManager.GetUserName();
+            PlayerName.text = _svm.PlayerName;
         }
 
         void TransitionExp()
