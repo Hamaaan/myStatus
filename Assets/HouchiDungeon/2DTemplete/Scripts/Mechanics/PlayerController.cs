@@ -63,9 +63,15 @@ namespace Platformer.Mechanics
 
         private void Start()
         {
+
+            //スピードバフ
             if (StaticValueManager.instance.PreMiniGameScene == "IQ_KigouSagashi 1")
             {
-                moveSpeed = 2.0f * _svm.PlayerSpeed / _svm.MaxPlayerSpeed;
+                moveSpeed = (float)(0.2 + 1.5 *_svm.PlayerSpeed / 400);
+            }
+            else
+            {
+                moveSpeed = (float)(0.2 + _svm.PlayerSpeed / 400);
             }
 
             if (StaticValueManager.instance.PreMiniGameScene == "testcoin")
@@ -93,6 +99,8 @@ namespace Platformer.Mechanics
                 }
                 else
                 {
+                    //移動処理
+                    
                     move.x = moveSpeed;
                 }
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))

@@ -8,7 +8,6 @@ using UnityEngine;
     {
         StaticValueManager _svm;
 
-       
         //最大値との比率
         private float RatioHP;
         private float RatioSpeed;
