@@ -47,6 +47,9 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        //
+        StaticValueManager _svm;
+
         void Awake()
         {
             health = GetComponent<Health>();
@@ -54,17 +57,15 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
-
             
-            
-            
+            _svm = StaticValueManager.instance;
         }
 
         private void Start()
         {
             if (StaticValueManager.instance.PreMiniGameScene == "IQ_KigouSagashi 1")
             {
-                moveSpeed = 0.3f;
+                moveSpeed = 2.0f * _svm.PlayerSpeed / _svm.MaxPlayerSpeed;
             }
 
             if (StaticValueManager.instance.PreMiniGameScene == "testcoin")

@@ -24,13 +24,18 @@ public class SpecialManager : MonoBehaviour
             if (preMiniGame == MiniGame[i])
             {
                 Buff[i].SetActive(true);
+
+                
                 if (preMiniGame == "testcoin")
                 {
                     _svm.PlayerHP *= 1.2f;
                 }else if (preMiniGame == "testomori")
                 {
-                    _svm.PlayerExp *= 1.2f;
+                    //_svm.PlayerExp *= 1.2f;
                 }
+                
+
+
             }
             else
             {
