@@ -20,7 +20,7 @@ public class OpeningSceneManager : MonoBehaviour
     {
         InputName = InputName.GetComponent<Text>();
         DisplayName = DisplayName.GetComponent<Text>();
-
+        //PlayerPrefs.DeleteAll();
     }
 
     // Update is called once per frame
@@ -33,6 +33,10 @@ public class OpeningSceneManager : MonoBehaviour
     public void OnClick()
     {
         SceneManager.LoadScene(SceneName);
+    }
+    public void OnEndEdit()
+    {
+        PlayerPrefs.SetString("PlayerName", UserName);
     }
 
     public static string GetUserName()

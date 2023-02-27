@@ -2303,6 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a825f9e3d09c50a4f8309d4fec811de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StaticCanvas: {fileID: 6270962734898477211}
 --- !u!1 &2219753734752394295
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Nakamura/Scenes/IQ_NumberChant 1.unity
     guid: 51e78097c20b241249cfeccfa84c4aae
   - enabled: 1
+    path: Assets/SocialConnector/Sample/Sample.unity
+    guid: d9b5913d08a1a480e9a4c7bbbcf6ec6a
+  - enabled: 1
     path: Assets/Hamaaan/Scenes/HouchDungeon/Opening 1.unity
     guid: 90e2c39187535254a8e9adc6c95a8ce4
   - enabled: 1

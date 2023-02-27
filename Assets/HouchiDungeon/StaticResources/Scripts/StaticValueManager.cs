@@ -71,7 +71,7 @@ public class StaticValueManager : MonoBehaviour
     private void Start()
     {
         SceneManager.activeSceneChanged += ActiveSceneChanged;
-        PlayerName = OpeningSceneManager.GetUserName();
+        //PlayerName = OpeningSceneManager.GetUserName();
     }
     void ActiveSceneChanged(Scene thisScene, Scene nextScene)
     {
@@ -81,10 +81,15 @@ public class StaticValueManager : MonoBehaviour
         if (ActiveSceneName == "Home")
         {
             isDungeonClear = false;
+
         }
         if (ActiveSceneName == "Dungeon001")
         {
             isTimerOn = true;
+        }
+        if (ActiveSceneName == "Intro")
+        {
+
         }
 
     }
