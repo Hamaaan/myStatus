@@ -71,8 +71,8 @@ public class StaticValueManager : MonoBehaviour
     private void Start()
     {
         SceneManager.activeSceneChanged += ActiveSceneChanged;
-        //PlayerName = OpeningSceneManager.GetUserName();
     }
+
     void ActiveSceneChanged(Scene thisScene, Scene nextScene)
     {
         //SceneBGM

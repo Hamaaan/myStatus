@@ -6,11 +6,16 @@ public class ShareController : MonoBehaviour
 {
     string imgPath;
 
+    private void Start()
+    {
+        
+    }
+
     //シェアするときにこれを呼び出す
     public void Share()
     {
         //参照したサイトはここでコルーチンを呼び出してるけど
-        //StartCoroutine(CaptureCoroutine());
+        StartCoroutine(CaptureCoroutine());
         //リザルトになったタイミングとかでこのコルーチンを呼び出すようにすると良いかも？
         
         //投稿
